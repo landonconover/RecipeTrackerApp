@@ -56,9 +56,9 @@
 
     <div class="container" ng-controller="RecipeController as recipe">
       <!-- Example row of columns -->
-      <div class="row" ng-repeat="recipie in recipe.recipes">
-        <h1>{{recipie.name}}</h1>
-        <h3 ng-show="recipie.category">Catagory: {{recipie.category}}</h3>
+      <div class="row" ng-repeat="recipe in recipes">
+        <h1>{{recipe.name}}</h1>
+        <h3 ng-show="recipe.category">Catagory: {{recipe.category}}</h3>
       </div>
 
       <hr>

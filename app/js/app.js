@@ -6,6 +6,6 @@
 angular.module('RecipeApp', ['recipeservices']).
 
 controller('RecipeController', function($scope, Recipe){
-	this.recipes = Recipe.query();
+	$scope.recipes = Recipe.query();
 })
 

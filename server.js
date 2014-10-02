@@ -34,7 +34,6 @@ var router = express.Router(); 				// get an instance of the express Router
 router.use(function(req, res, next) {
 	// do logging
 	console.log('Something is happening.');
-	console.log(req.body.name);
 	next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -45,7 +44,11 @@ router.get('/', function(req, res) {
 
 // more routes for our API will happen here
 router.route('/recipes')
+
+	//******************************************************
+	//POST NEW
 	// create a recipe (accessed at POST http://localhost:8080/api/recipes)
+	//******************************************************
 	.post(function(req, res) {
 		
 		// create a new instance of the Recipe model
@@ -53,6 +56,7 @@ router.route('/recipes')
 
 		// set the Recipe name (comes from the request)
 		recipe.name = req.body.name;  
+		recipe.category = req.body.category;  
 
 		// save the recipe and check for errors
 		recipe.save(function(err) {
@@ -60,12 +64,18 @@ router.route('/recipes')
 				res.send(err);
 
 			res.json({ 	message: 'Recipe created!',
-						name: recipe.name
+						name: recipe.name,
+						category: recipe.category
 					});
 		});
 	})
+	//******************************************************
 
+
+	//******************************************************
+	//GET ALL
 	//get all recipes (accessed at GET http://localhost:8080/api/recipes)
+	//******************************************************
 	.get(function(req, res) {
 		Recipe.find(function(err, recipes) {
 			if (err)
@@ -74,13 +84,17 @@ router.route('/recipes')
 			res.json(recipes);
 		});
 	});
+	//******************************************************
 
 
 	// on routes that end in /recipes/:recipe_id
 // ----------------------------------------------------
 router.route('/recipes/:recipe_id')
 
+	//******************************************************
+	//GET ONE
 	// get the recipe with that id (accessed at GET http://localhost:8080/api/recipes/:recipe_id)
+	//******************************************************
 	.get(function(req, res) {
 		Recipe.findById(req.params.recipe_id, function(err, recipe) {
 			if (err)
@@ -88,8 +102,12 @@ router.route('/recipes/:recipe_id')
 			res.json(recipe);
 		});
 	})
+	//******************************************************
 
+	//******************************************************
+	//EDIT ONE
 	// update the recipe with this id (accessed at PUT http://localhost:8080/api/recipes/:recipe_id)
+	//******************************************************
 	.put(function(req, res) {
 
 		// use our recipe model to find the recipe we want
@@ -98,7 +116,9 @@ router.route('/recipes/:recipe_id')
 			if (err)
 				res.send(err);
 
-			recipe.name = req.body.name; 	// update the recipes info
+			// update the recipes info
+			recipe.name = req.body.name; 
+			recipe.category = req.body.category; 	
 
 			// save the recipe
 			recipe.save(function(err) {
@@ -110,8 +130,12 @@ router.route('/recipes/:recipe_id')
 
 		});
 	})
+	//******************************************************
 
+	//******************************************************
+	//DELETE ONE
 	// delete the recipe with this id (accessed at DELETE http://localhost:8080/api/recipes/:recipe_id)
+	//******************************************************
 	.delete(function(req, res) {
 		Recipe.remove({
 			_id: req.params.recipe_id
@@ -122,6 +146,7 @@ router.route('/recipes/:recipe_id')
 			res.json({ message: 'Successfully deleted' });
 		});
 	});
+	//******************************************************
 
 
 // REGISTER OUR ROUTES -------------------------------

@@ -34,6 +34,8 @@ var router = express.Router(); 				// get an instance of the express Router
 router.use(function(req, res, next) {
 	// do logging
 	console.log('Something is happening.');
+	console.log('Here is the body:');
+	console.log(req.body);
 	next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -56,17 +58,17 @@ router.route('/recipes')
 
 		// set the Recipe name (comes from the request)
 		recipe.name = req.body.name;  
-		recipe.category = req.body.category;  
+		recipe.category = req.body.category;
+		recipe.rating = req.body.rating; 
+		recipe.directions = req.body.directions;
+		recipe.ingredients = req.body.ingredients;
 
 		// save the recipe and check for errors
 		recipe.save(function(err) {
 			if (err)
 				res.send(err);
 
-			res.json({ 	message: 'Recipe created!',
-						name: recipe.name,
-						category: recipe.category
-					});
+			res.json(recipe);
 		});
 	})
 	//******************************************************

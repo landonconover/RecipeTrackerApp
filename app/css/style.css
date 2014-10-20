@@ -4,6 +4,9 @@ body {
   padding-bottom: 127px;
 }
 
+footer .glyphicon {
+  font-size: 200%;
+}
 
 
 @media (min-width:768px){

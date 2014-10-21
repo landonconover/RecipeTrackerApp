@@ -68,29 +68,56 @@
     </div>
     
     <div class="container">
-    <div>
-    	<h4>Recipe Title</h4>
-        <input type="text"/>
-    </div>
-    <div>
-    	<h4>Source</h4>
-        <input type="text"/>
-    </div>
-    <div>
-    	<h4>Ingredients</h4>
-        Quantity
-        <input type="number"/>
-        <hr/>
-        <label>Measuring units</label>
+    <form>
+       <fieldset>
+          <legend>Adding a Recipe-</legend>
+          <p>
+             <label>Recipe Title:</label>
+             <input type="text"/>
+          </p>
+           <p>
+             <label>Source:</label>
+             <input type="text"/>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Ingredients-</legend>
+          <p>
+             <label>Qty:</label>
+             <input type="number"/>
+          </p>
+           <p>
+             <label>Measured Units</label>
              <select id = "myList">
                <option value = "1">Cups</option>
                <option value = "2">Tbls</option>
                <option value = "3">Tsp</option>
                <option value = "4">oz</option>
              </select>
-        
-    </div>
-    
+          </p>
+             <p>
+             <label>Ingredient name</label>
+             <input type="text"/>
+          </p>
+             <p>
+            <button name="button">Add Ingredients</button>
+          </p>
+          
+       </fieldset>
+        <fieldset>
+          <legend>Directions</legend>
+          <p>
+             <textarea name="textarea" rows="10" cols="50">Type Directions here</textarea>
+           
+          </p>
+          <p><input type="submit">
+           
+          </p>
+  
+       </fieldset>
+    </form>
+  
+
     </div>
       <footer class="navbar-inverse navbar-fixed-bottom">
         <nav role="navigation" class="navbar navbar-primary visible-xs">

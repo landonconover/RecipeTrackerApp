@@ -27,21 +27,27 @@ MongoDB is required. Goto www.mongodb.org to install and find instructions to ge
 Backend dependancies:
 
     npm install
+    
 Frontend dependancies:
 
     bower install
-    
+
+Install nodemon. If you are working on the server nodemon will restart the server when you save the files. Otherwise, nodemon isn't needed. See [Nodemon,](https://github.com/remy/nodemon) for more info
+
+    npm install -g nodemon
+
+####Do the Database things and start the server
+
 Start the Mongo server (sudo maybe required.)
 
     mongod
 
-Start the server (I recommend nodemon):
 
-Install nodemon, if needed.
+Seed the database with default data. (sudo maybe required.)
 
-    npm install -g nodemon
+    node seedDatabase.js
 
-Then start the server:
+Start the server:
 (using Nodemon)
 
     nodemon server.js

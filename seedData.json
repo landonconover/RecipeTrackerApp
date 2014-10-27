@@ -1,0 +1,158 @@
+[
+	{
+	    "name": "Mac and Cheese",
+	    "category": "Lunch",
+	    "rating": "4",
+	    "directions": [
+	        {
+	            "step": 1,
+	            "direction": "Boil Water"
+	        },
+	        {
+	            "step": 2,
+	            "direction": "Add box of Pasta"
+	        },
+	      	{
+	            "step": 3,
+	            "direction": "Cook until it tastes good."
+	        },
+	      	{
+	            "step": 4,
+	            "direction": "Add cheese packet, milk and butter"
+	        }
+	    ],
+	   "ingredients": [
+	        {
+	            "amount": "5 Cups",
+	            "ingredient": "Water"
+	        },
+	        {
+	            "amount": "1 Box",
+	            "ingredient": "Pasta"
+	        },
+	     	{
+	            "amount": "1 Tsp",
+	            "ingredient": "Salt"
+	        },
+	     	{
+	            "amount": "1 Tsp",
+	            "ingredient": "Butter"
+	        },
+	     	{
+	            "amount": "1 Tsp",
+	            "ingredient": "Milk"
+	        }
+	    ]
+	},
+	{
+	    "name": "Pasta",
+	    "category": "Dinner",
+	    "rating": "3",
+	    "directions": [
+	        {
+	            "step": 1,
+	            "direction": "Boil Water"
+	        },
+	        {
+	            "step": 2,
+	            "direction": "Add Pasta"
+	        },
+	      	{
+	            "step": 3,
+	            "direction": "Cook until it tastes good."
+	        }
+	    ],
+	   "ingredients": [
+	        {
+	            "amount": "5 Cups",
+	            "ingredient": "Water"
+	        },
+	        {
+	            "amount": "1 Cup",
+	            "ingredient": "Pasta"
+	        },
+	     	{
+	            "amount": "1 Tsp",
+	            "ingredient": "Salt"
+	        }
+	    ]
+	},
+	{
+	    "name": "Eggs and Bacon",
+	    "category": "Breakfast",
+	    "rating": "5",
+	    "directions": [
+	        {
+	            "step": 1,
+	            "direction": "Place Bacon on pan"
+	        },
+	        {
+	            "step": 2,
+	            "direction": "Heat pan with Bacon on it"
+	        },
+	      	{
+	            "step": 3,
+	            "direction": "Cook until it tastes good."
+	        },
+	      	{
+	            "step": 4,
+	            "direction": "Bacon is done when it looks like AWESOME"
+	        },
+	      	{
+	            "step": 5,
+	            "direction": "After Bacon is done, DO NOT EAT YET!. I know the Bacon wants to be gobbled up, but don't"
+	        },
+	      	{
+	            "step": 6,
+	            "direction": "Crack eggs on Pan. Cook till done."
+	        },
+	      	{
+	            "step": 7,
+	            "direction": "Now you can eat the Bacon. Enjoy."
+	        }
+	    ],
+	   "ingredients": [
+	        {
+	            "amount": "3",
+	            "ingredient": "Eggs"
+	        },
+	        {
+	            "amount": "5 Strips (The more the better, really)",
+	            "ingredient": "Bacon"
+	        }
+	    ]
+	},
+	{
+	    "name": "Cereal",
+	    "category": "Breakfast",
+	    "rating": "2",
+	    "directions": [
+	        {
+	            "step": 1,
+	            "direction": "Pour Cereal into Bowl"
+	        },
+	        {
+	            "step": 2,
+	            "direction": "Add Milk"
+	        },
+	      	{
+	            "step": 3,
+	            "direction": "Eat slowly so that the milk becomes sugary."
+	        },
+	      	{
+	            "step": 4,
+	            "direction": "Drink the milk that is now the best part."
+	        }
+	    ],
+	   "ingredients": [
+	        {
+	            "amount": "1 Cup",
+	            "ingredient": "Cereal (The more sugar the better)"
+	        },
+	        {
+	            "amount": "1 Cup",
+	            "ingredient": "Milk"
+	        }
+	    ]
+	}
+]

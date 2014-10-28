@@ -50,21 +50,40 @@ ASQ()
 
 //drop the recipie collection
 .then(function(done){
-	mongoose.connection.collections['recipes'].drop( function(err) {
 
-		if (err) {
-			console.log(err);
-			process.exit();
-		};
+// 	mongoose.db.collectionNames(function (err, names) {
+//     console.log(names);
+// });
 
-		console.log();
-	    console.log('I sure hope you know what you are doing...');
-	    console.log('The recipie collection has been dropped, and is gone FOREVER AND EVER!');
-	    console.log();
+	mongoose.connections[0].db.collectionNames(function(err, names){
+		// console.log(names[1].name);
 
-	    //next step
-	    done();
-	});
+		//Check to see if there is a recipies collection (This is an awful way to do it btw)
+		if (names[1]) {
+
+			mongoose.connection.collections['recipes'].drop( function(err) {
+
+				if (err) {
+					console.log(err);
+					process.exit();
+				};
+
+				console.log();
+			    console.log('I sure hope you know what you are doing...');
+			    console.log('The recipie collection has been dropped, and is gone FOREVER AND EVER!');
+			    console.log();
+
+			    //next step
+			    done();
+			});
+
+		} else {
+			console.log("recipie collection not found, Moving on.");
+			done()
+		}
+	})
+
+	
 })
 
 //Loop through the JSON data and add it to the DB

@@ -23,23 +23,28 @@
 	    ],
 	   "ingredients": [
 	        {
-	            "amount": "5 Cups",
+	            "amount": 5,
+	            "amountType": "Cup",
 	            "ingredient": "Water"
 	        },
 	        {
-	            "amount": "1 Box",
+	            "amount": 1,
+	            "amountType": "Box",
 	            "ingredient": "Pasta"
 	        },
 	     	{
-	            "amount": "1 Tsp",
+	            "amount": 1,
+	            "amountType": "Tsp",
 	            "ingredient": "Salt"
 	        },
 	     	{
-	            "amount": "1 Tsp",
+	            "amount": 1,
+	            "amountType": "Tsp",
 	            "ingredient": "Butter"
 	        },
 	     	{
-	            "amount": "1 Tsp",
+	            "amount": 1,
+	            "amountType": "Tsp",
 	            "ingredient": "Milk"
 	        }
 	    ]
@@ -64,15 +69,18 @@
 	    ],
 	   "ingredients": [
 	        {
-	            "amount": "5 Cups",
+	            "amount": 5,
+	            "amountType": "Cup",
 	            "ingredient": "Water"
 	        },
 	        {
-	            "amount": "1 Cup",
+	            "amount": 1,
+	            "amountType": "Cup",
 	            "ingredient": "Pasta"
 	        },
 	     	{
-	            "amount": "1 Tsp",
+	            "amount": 1,
+	            "amountType": "Tsp",
 	            "ingredient": "Salt"
 	        }
 	    ]
@@ -113,11 +121,13 @@
 	    ],
 	   "ingredients": [
 	        {
-	            "amount": "3",
+	            "amount": 3,
+	            "amountType": "Units",
 	            "ingredient": "Eggs"
 	        },
 	        {
-	            "amount": "5 Strips (The more the better, really)",
+	            "amount": 5,
+	            "amountType": "Strips",
 	            "ingredient": "Bacon"
 	        }
 	    ]
@@ -146,11 +156,13 @@
 	    ],
 	   "ingredients": [
 	        {
-	            "amount": "1 Cup",
+	            "amount": 1,
+	            "amountType": "Cup",
 	            "ingredient": "Cereal (The more sugar the better)"
 	        },
 	        {
-	            "amount": "1 Cup",
+	            "amount": 1,
+	            "amountType": "Cup",
 	            "ingredient": "Milk"
 	        }
 	    ]

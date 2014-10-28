@@ -7,7 +7,8 @@ var DirectionsSchema = new Schema({
 });
 
 var IngredientSchema = new Schema({
-	amount: String,
+	amount: Number,
+	amountType: String,
 	ingredient: String
 });
 

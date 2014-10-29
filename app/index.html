@@ -24,7 +24,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-app="RecipeApp">
     <header>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container">
@@ -51,10 +51,11 @@
             <div class="row">
                 <nav role="navigation" class="navbar navbar-primary hidden-xs">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Recipes</a></li>
-                        <li><a href="#">Meal Planner</a></li>
-                        <li><a href="shopping.html">Shopping List</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recipes">Recipes</a></li>
+                        <li><a href="#addRecipe">Add Recipe</a></li>
+                        <li><a href="#planner">Meal Planner</a></li>
+                        <li><a href="#shopping">Shopping List</a></li>
                     </ul>
                 </nav>
             </div>
@@ -66,59 +67,10 @@
         <div class="content">
         <!-- Main jumbotron for a primary marketing message or call to action -->
 
-        <div class="container">
-        	<h2>Today's Menu</h2>
-            <div class="home-menu container">
-         		<div class="row">
-                	<h3>Breakfast</h3>
-                    <div class="row">
-                    	<div class="col-xs-10 col-xs-offset-1">
-                        	<ul>
-                            	<li>Scrambled Eggs</li>
-                                <li>Hash Browns</li>
-                                <li>Orange Juice</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h3>Lunch</h3>
-                    <div class="row">
-                    	<div class="col-xs-10 col-xs-offset-1">
-                        	<ul>
-                            	<li>Turkey Sandwich</li>
-                                <li>Small Salad</li>
-                                <li>Water</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h3>Dinner</h3>
-                    <div class="row">
-                    	<div class="col-xs-10 col-xs-offset-1">
-                        	<ul>
-                            	<li>Grilled Chicken</li>
-                                <li>Steamed Veggies</li>
-                                <li>Roll</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h3>Dessert</h3>
-                    <div class="row">
-                    	<div class="col-xs-10 col-xs-offset-1">
-                        	<ul>
-                            	<li>Lemon Meringue Pie</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-    	  	</div>
-            <div class="row">
-            	<div class="col-xs-10 col-xs-offset-1">
-                    <div class="row">
-                        <a class="btn btn-success col-xs-5 text-center"><span class="glyphicon glyphicon-list" style="font-size: 28px; width: 28px;">&nbsp;</span><br>Today's <br class="visible-xs">Groceries</a>
-                        <a class="btn btn-success col-xs-5 text-center col-xs-offset-2"><span style="font-size: 28px; width: 28px;" class="glyphicon glyphicon-plus">&nbsp;</span><br>Add a <br class="visible-xs">Recipe</a>
-                    </div>
-                </div>
-             </div>
-          <hr>
+        <div class="container" ng-view>
+
+
+
     </div>
       <footer class="navbar-inverse navbar-fixed-bottom">
       	<nav role="navigation" class="navbar navbar-primary visible-xs">
@@ -146,6 +98,7 @@
 
     <script src="js/lib/angular/angular.min.js"></script>
     <script src="js/lib/angular-resource/angular-resource.min.js"></script>
+    <script src="js/lib/angular-route/angular-route.min.js"></script>
     <script src="js/services.js"></script>
     <script src="js/app.js"></script>
 

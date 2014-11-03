@@ -50,7 +50,7 @@ recipeApp.controller('PlannerController', function($scope, Recipe){
 });
 
 recipeApp.controller('ListController', function($scope, Recipe){
-
+	$scope.recipes = Recipe.query();
 });
 
 recipeApp.controller('AddRecipeController', function($scope, Recipe){

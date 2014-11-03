@@ -1,233 +1,31 @@
-<div class="jumbotron">
+		<div class="jumbotron">
           <div class="container">
             <h1><span class="glyphicon glyphicon-shopping-cart">&nbsp;</span> Shopping&nbsp;List</h1>
           </div>
         </div>
     
         <div class="container">
+        <p>Be sure to get everything on the list</p>
           <div class="row">
           	<div class="col-xs-4">
-            	<h4>List Item</h4>
+            	<h4>What to Get</h4>
             </div>
             <div class="col-xs-7">
-            	<h4>Ammount Needed</h4>
+            	<h4>Amount Needed</h4>
             </div>
           </div>
-          <div class="row">
+        <div ng-repeat="recipe in recipes">
+          <div class="row" ng-repeat="ingredient in recipe.ingredients">
           	<div class="col-xs-1">
             	<input type="checkbox" />
             </div>
             <div class="col-xs-3">
-            	Butter
+            	{{ingredient.ingredient}}
             </div>
             <div class="col-xs-7">
-            	2 cups
+            	{{ingredient.amount + " " + ingredient.amountType}}
             </div>
           </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Eggs
-            </div>
-            <div class="col-xs-7">
-            	5 eggs
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Bread
-            </div>
-            <div class="col-xs-7">
-            	1 loaf
-            </div>
-          </div>
-    	  <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Sugar
-            </div>
-            <div class="col-xs-7">
-            	1 pound
-            </div>
-          </div><div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Butter
-            </div>
-            <div class="col-xs-7">
-            	2 cups
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Eggs
-            </div>
-            <div class="col-xs-7">
-            	5 eggs
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Bread
-            </div>
-            <div class="col-xs-7">
-            	1 loaf
-            </div>
-          </div>
-    	  <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Sugar
-            </div>
-            <div class="col-xs-7">
-            	1 pound
-            </div>
-          </div><div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Butter
-            </div>
-            <div class="col-xs-7">
-            	2 cups
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Eggs
-            </div>
-            <div class="col-xs-7">
-            	5 eggs
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Bread
-            </div>
-            <div class="col-xs-7">
-            	1 loaf
-            </div>
-          </div>
-    	  <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Sugar
-            </div>
-            <div class="col-xs-7">
-            	1 pound
-            </div>
-          </div><div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Butter
-            </div>
-            <div class="col-xs-7">
-            	2 cups
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Eggs
-            </div>
-            <div class="col-xs-7">
-            	5 eggs
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Bread
-            </div>
-            <div class="col-xs-7">
-            	1 loaf
-            </div>
-          </div>
-    	  <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Sugar
-            </div>
-            <div class="col-xs-7">
-            	1 pound
-            </div>
-          </div><div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Butter
-            </div>
-            <div class="col-xs-7">
-            	2 cups
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Eggs
-            </div>
-            <div class="col-xs-7">
-            	5 eggs
-            </div>
-          </div>
-          <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Bread
-            </div>
-            <div class="col-xs-7">
-            	1 loaf
-            </div>
-          </div>
-    	  <div class="row">
-          	<div class="col-xs-1">
-            	<input type="checkbox" />
-            </div>
-            <div class="col-xs-3">
-            	Sugar
-            </div>
-            <div class="col-xs-7">
-            	1 pound
-            </div>
-          </div>
-    	  
-          <hr>
+  		</div>
+    	</div>
+        <hr>

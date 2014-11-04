@@ -12,6 +12,8 @@ The following list is what we are storying along with the defined type.
 
 The Schema file can be found [here.](https://github.com/landonconover/RecipeTrackerApp/blob/master/models/recipes.js)
 
+For more information about a Angular.js CRUD app see [This article.](http://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/)
+
 
 ##Sample JSON Entry
 

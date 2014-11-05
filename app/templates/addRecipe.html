@@ -1,4 +1,5 @@
-<form>
+<form method="post">
+
        <fieldset>
           <legend>Adding a Recipe-</legend>
           <p>
@@ -12,9 +13,12 @@
        </fieldset>
        <fieldset>
           <legend>Ingredients-</legend>
+          <div id="itemRows">
+  
+          
           <p>
              <label>Qty:</label>
-             <input type="number"/>
+             <input type="number"name="add_qty" size="4"/>
           </p>
            <p>
              <label>Measured Units</label>
@@ -27,12 +31,12 @@
           </p>
              <p>
              <label>Ingredient name</label>
-             <input type="text"/>
+             <input type="text"name="add_name"/>
           </p>
              <p>
-            <button name="button">Add Ingredients</button>
+            <input onclick="addRow(this.form);" type="button" value="Add row" />
           </p>
-          
+          </div>
        </fieldset>
         <fieldset>
           <legend>Directions</legend>

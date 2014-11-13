@@ -2,18 +2,73 @@
 
 <div id="weekContainer">
 	<h3>Monday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.monday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'monday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 	<h3>Tuesday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.tuesday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'tuesday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 	<h3>Wednesday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.wednesday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'wednesday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 	<h3>Thrusday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.thursday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'thursday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 	<h3>Friday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.friday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'friday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 	<h3>Saturday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.saturday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'saturday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 	<h3>Sunday</h3>
-		<button type="button" class="btn btn-primary btn-xs">Add Recipe</button>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    {{recipes.sunday}}
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'sunday')" tabindex="-1" >{{recipe.name}}</a></li>
+		  </ul>
+		</div>
 </div>
-

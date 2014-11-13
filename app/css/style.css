@@ -8,6 +8,10 @@ footer .glyphicon {
   font-size: 200%;
 }
 
+#weekContainer{
+	padding-left: 2%;
+}
+
 
 @media (min-width:768px){
 body {

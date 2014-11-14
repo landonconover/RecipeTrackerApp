@@ -22,6 +22,10 @@ h3, h4{
   color:#468847;	
 }
 
+#weekContainer{
+	padding-left: 2%;
+}
+
 h5, h6{
   color: #000;	
 }

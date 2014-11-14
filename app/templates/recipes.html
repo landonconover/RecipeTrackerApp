@@ -4,10 +4,18 @@
             <a href="#addRecipe" class="btn btn-success col-xs-5 text-center"><span style="font-size: 28px; width: 28px;" class="glyphicon glyphicon-plus">&nbsp;</span><br>Add a <br class="visible-xs">Recipe</a>
         </div>
         
-      <div class="row" ng-repeat="recipe in recipes">
+      <div class="row recipe-card" ng-repeat="recipe in recipes">
         <h1>{{recipe.name}}</h1>
         <h3 ng-show="recipe.category">Catagory: {{recipe.category}}</h3>
+        <h3>Ingredients</h3>
+        	<ul>
+        		<li ng-repeat="ingredient in recipe.ingredients">{{ingredient.amount + " " + ingredient.amountType + " " + ingredient.ingredient}}</li>
+            </ul>
+        <h3>Directions</h3>
+        	<ol>
+            	<li ng-repeat="steps in recipe.directions">{{steps.direction}}</li>
+            </ol>
+        <hr>
       </div>
-
-      <hr>
+       
 

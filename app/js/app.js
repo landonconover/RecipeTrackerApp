@@ -60,6 +60,36 @@ recipeApp.controller('ListController', function($scope, Recipe){
 	$scope.recipes = Recipe.query();
 });
 
-recipeApp.controller('AddRecipeController', function($scope, Recipe){
+recipeApp.controller('AddRecipeController', function($scope, Recipe, $http){
+	
+	
+	$scope.addRecipe = function (){
+		var data = {
+						rating: $scope.recipeRating,
+						category: $scope.recipeCategory,
+						name: $scope.recipeName,
+						__v: 0,
+						ingredients: [
+							{
+								amount: $scope.recipeIngredientsAmmount,
+								amountType: $scope.recipeIngredientsAmmountType,
+								ingredient: $scope.recipeIngredientsIngredient
+							}
+						],
+						directions: [
+							{
+								step: $scope.directionsStep,
+								direction: $scope.directionsDirection
+							}
+						]
+					};
+		$http.post("api/recipes", data).success(function (data, status, headers) {
+			alert("Recipe added.");
+			$http.get(headers("location")).success(function (data) {
+				$scope.recipes.push(data);
+			});
+							window.location = "/#/recipes";
 
+		});
+	}
 });

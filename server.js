@@ -113,7 +113,7 @@ router.route('/recipes/:recipe_id')
 	//******************************************************
 	.put(function(req, res) {
 
-		// use our recipe model to find the recipe we want
+		// use our recipe model to find the recipe we want - UNCOMMENT AS NEEDED
 		// Recipe.findById(req.params.recipe_id, function(err, recipe) {
 
 		// 	if (err)
@@ -140,17 +140,6 @@ router.route('/recipes/:recipe_id')
 
 		// });
 
-		WeekPlan.findOneAndUpdate({day: req.body.day}, {day: req.body.day, recipe: req.params.recipe_id}, {upsert:true}, function(err, doc){
-			if (err) {
-				console.log(err);
-				res.status(500);
-				res.send('There is an error' + err);
-			};
-			console.log("fineOneAndUpdate:");
-			console.log(doc);
-			res.json(doc);
-		});
-
 	})
 	//******************************************************
 
@@ -170,6 +159,22 @@ router.route('/recipes/:recipe_id')
 	});
 	//******************************************************
 
+	router.route('/week/:recipe_id')
+
+	.put(function(req, res) {
+
+		WeekPlan.findOneAndUpdate({day: req.body.day}, {day: req.body.day, recipe: req.params.recipe_id}, {upsert:true}, function(err, doc){
+			if (err) {
+				console.log(err);
+				res.status(500);
+				res.send('There is an error' + err);
+			};
+			console.log("fineOneAndUpdate:");
+			console.log(doc);
+			res.json(doc);
+		});
+
+	})
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api

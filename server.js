@@ -119,9 +119,16 @@ router.route('/recipes/:recipe_id')
 				res.send(err);
 
 			// update the recipes info
-			recipe.name = req.body.name; 
-			recipe.category = req.body.category; 	
+			// recipe.name = req.body.name; 
+			// recipe.category = req.body.category; 
+			recipe.date 	   = req.body.date;
 
+
+
+			// console.log(req.body);
+
+			console.log(recipe.date);
+ 
 			// save the recipe
 			recipe.save(function(err) {
 				if (err)

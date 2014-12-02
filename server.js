@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/recipeTracker');
 
 //include the models
 var Recipe     = require('./models/recipes');
+var WeekPlan   = require('./models/weekPlan');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -107,37 +108,49 @@ router.route('/recipes/:recipe_id')
 	//******************************************************
 
 	//******************************************************
-	//EDIT ONE
+	//EDIT ONE - UPDATE ONE
 	// update the recipe with this id (accessed at PUT http://localhost:8080/api/recipes/:recipe_id)
 	//******************************************************
 	.put(function(req, res) {
 
 		// use our recipe model to find the recipe we want
-		Recipe.findById(req.params.recipe_id, function(err, recipe) {
+		// Recipe.findById(req.params.recipe_id, function(err, recipe) {
 
-			if (err)
-				res.send(err);
+		// 	if (err)
+		// 		res.send(err);
 
-			// update the recipes info
-			// recipe.name = req.body.name; 
-			// recipe.category = req.body.category; 
-			recipe.date 	   = req.body.date;
+		// 	// update the recipes info
+		// 	// recipe.name = req.body.name; 
+		// 	// recipe.category = req.body.category; 
+		// 	// recipe.date 	   = req.body.date;
 
 
 
-			// console.log(req.body);
+		// 	// console.log(req.body);
 
-			console.log(recipe.date);
+		// 	// console.log(recipe.date);
  
-			// save the recipe
-			recipe.save(function(err) {
-				if (err)
-					res.send(err);
+		// 	// save the recipe
+		// 	recipe.save(function(err) {
+		// 		if (err)
+		// 			res.send(err);
 
-				res.json({ message: 'Recipe updated!' });
-			});
+		// 		res.json({ message: 'Recipe updated!' });
+		// 	});
 
+		// });
+
+		WeekPlan.findOneAndUpdate({day: req.body.day}, {day: req.body.day, recipe: req.params.recipe_id}, {upsert:true}, function(err, doc){
+			if (err) {
+				console.log(err);
+				res.status(500);
+				res.send('There is an error' + err);
+			};
+			console.log("fineOneAndUpdate:");
+			console.log(doc);
+			res.json(doc);
 		});
+
 	})
 	//******************************************************
 

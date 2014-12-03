@@ -45,13 +45,27 @@ recipeApp.controller('RecipeController', function($scope, Recipe){
 	$scope.recipes = Recipe.query();
 });
 
-recipeApp.controller('PlannerController', function($scope, Recipe){
+recipeApp.controller('PlannerController', function($scope, Recipe, Week){
   $scope.recipes = Recipe.query();
 
-  $scope.selectRecipie = function (selectedRecipie, dayOfWeek){
+  $scope.selectRecipie = function (selectedRecipie, dayOfWeek, recipeId){
     console.log(selectedRecipie);
+    console.log(recipeId);
+    console.log(dayOfWeek);
     $scope.recipes[dayOfWeek] = selectedRecipie;
     console.log($scope.recipes);
+
+    $scope.week = new Week();
+
+    $scope.week.day = dayOfWeek;
+    $scope.week.id  = recipeId;
+
+    $scope.week.$update({id: recipeId});
+    
+
+
+
+
   }
 
 });

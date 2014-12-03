@@ -55,8 +55,12 @@ recipeApp.controller('PlannerController', function($scope, Recipe, Week){
     $scope.recipes[dayOfWeek] = selectedRecipie;
     console.log($scope.recipes);
 
+    //create a new week object with $resource funcions
     $scope.week = new Week();
 
+    //set the data to send to the server
+    //.day is sent as post data through angular magic
+    //.id is sent on the URL line don't ask how it works. its magic.
     $scope.week.day = dayOfWeek;
     $scope.week.id  = recipeId;
 

@@ -176,6 +176,40 @@ router.route('/recipes/:recipe_id')
 
 	})
 
+	.get(function(req, res) {
+		// console.log(req.params.recipe_id);
+		WeekPlan
+		.findOne({day: req.params.recipe_id})
+		.populate('recipe')
+		.exec(function (err, day) {
+		  if (err) return handleError(err);
+		  console.log(day);
+		  res.json(day)
+		})
+	});
+
+// more routes for our API will happen here
+router.route('/week')
+
+
+	//******************************************************
+
+
+	//******************************************************
+	//GET ALL
+	//get all days (accessed at GET http://localhost:8080/api/recipes)
+	//******************************************************
+	.get(function(req, res) {
+		WeekPlan
+		.find()
+		.populate('recipe')
+		.exec(function (err, days) {
+		  if (err) return handleError(err);
+		  // console.log(days);
+		  res.json(days)
+		})
+	});
+
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);

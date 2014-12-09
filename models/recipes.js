@@ -17,7 +17,8 @@ var RecipeSchema   = new Schema({
 	category: {type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Desserts']},
 	rating: { type: Number, min: 0, max: 5 },
 	directions: [DirectionsSchema],
-	ingredients: [IngredientSchema]
+	ingredients: [IngredientSchema],
+	date: Date
 });
 
 module.exports = mongoose.model('Recipe', RecipeSchema);

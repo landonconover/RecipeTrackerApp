@@ -45,13 +45,60 @@ recipeApp.controller('RecipeController', function($scope, Recipe){
 	$scope.recipes = Recipe.query();
 });
 
-recipeApp.controller('PlannerController', function($scope, Recipe){
+recipeApp.controller('PlannerController', function($scope, Recipe, Week){
+  
+  //get ALL the recipies for the week
+  $scope.weekRecipies = Week.query();
+
+  //get individual day recipies - Probably a better way to do this but it works!
+  Week.search({id: 'Monday'}, function(data){
+    $scope.Monday = data.recipe.name;
+  });
+
+  Week.search({id: 'Tuesday'}, function(data){
+    $scope.Tuesday = data.recipe.name;
+  });
+
+  Week.search({id: 'Wednesday'}, function(data){
+    $scope.Wednesday = data.recipe.name;
+  });
+
+  Week.search({id: 'Thursday'}, function(data){
+    $scope.Thursday = data.recipe.name;
+  });
+
+  Week.search({id: 'Friday'}, function(data){
+    $scope.Friday = data.recipe.name;
+  });
+
+  Week.search({id: 'Saturday'}, function(data){
+    $scope.Saturday = data.recipe.name;
+  });
+
+  Week.search({id: 'Sunday'}, function(data){
+    $scope.Sunday = data.recipe.name;
+  });
+
+  //get all recipies in the DB
   $scope.recipes = Recipe.query();
 
-  $scope.selectRecipie = function (selectedRecipie, dayOfWeek){
-    console.log(selectedRecipie);
+  //When a user selects a recipie for a day run this function
+  $scope.selectRecipie = function (selectedRecipie, dayOfWeek, recipeId){
+
+    //set the recipies.dayofweek to the selected recipie
     $scope.recipes[dayOfWeek] = selectedRecipie;
-    console.log($scope.recipes);
+
+    //create a new week object with $resource funcions to save the recipie
+    $scope.week = new Week();
+
+    //set the data to send to the server
+    //.day is sent as post data through angular magic
+    //.id is sent on the URL line don't ask how it works. its magic.
+    $scope.week.day = dayOfWeek;
+    $scope.week.id  = recipeId;
+
+    $scope.week.$update({id: recipeId});
+
   }
 
 });

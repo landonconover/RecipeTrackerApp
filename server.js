@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/recipeTracker');
 
 //include the models
 var Recipe     = require('./models/recipes');
+var WeekPlan   = require('./models/weekPlan');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -107,30 +108,38 @@ router.route('/recipes/:recipe_id')
 	//******************************************************
 
 	//******************************************************
-	//EDIT ONE
+	//EDIT ONE - UPDATE ONE
 	// update the recipe with this id (accessed at PUT http://localhost:8080/api/recipes/:recipe_id)
 	//******************************************************
 	.put(function(req, res) {
 
-		// use our recipe model to find the recipe we want
-		Recipe.findById(req.params.recipe_id, function(err, recipe) {
+		// use our recipe model to find the recipe we want - UNCOMMENT AS NEEDED
+		// Recipe.findById(req.params.recipe_id, function(err, recipe) {
 
-			if (err)
-				res.send(err);
+		// 	if (err)
+		// 		res.send(err);
 
-			// update the recipes info
-			recipe.name = req.body.name; 
-			recipe.category = req.body.category; 	
+		// 	// update the recipes info
+		// 	// recipe.name = req.body.name; 
+		// 	// recipe.category = req.body.category; 
+		// 	// recipe.date 	   = req.body.date;
 
-			// save the recipe
-			recipe.save(function(err) {
-				if (err)
-					res.send(err);
 
-				res.json({ message: 'Recipe updated!' });
-			});
 
-		});
+		// 	// console.log(req.body);
+
+		// 	// console.log(recipe.date);
+ 
+		// 	// save the recipe
+		// 	recipe.save(function(err) {
+		// 		if (err)
+		// 			res.send(err);
+
+		// 		res.json({ message: 'Recipe updated!' });
+		// 	});
+
+		// });
+
 	})
 	//******************************************************
 
@@ -150,6 +159,56 @@ router.route('/recipes/:recipe_id')
 	});
 	//******************************************************
 
+	router.route('/week/:recipe_id')
+
+	.put(function(req, res) {
+
+		WeekPlan.findOneAndUpdate({day: req.body.day}, {day: req.body.day, recipe: req.params.recipe_id}, {upsert:true}, function(err, doc){
+			if (err) {
+				console.log(err);
+				res.status(500);
+				res.send('There is an error' + err);
+			};
+			console.log("fineOneAndUpdate:");
+			console.log(doc);
+			res.json(doc);
+		});
+
+	})
+
+	.get(function(req, res) {
+		// console.log(req.params.recipe_id);
+		WeekPlan
+		.findOne({day: req.params.recipe_id})
+		.populate('recipe')
+		.exec(function (err, day) {
+		  if (err) return handleError(err);
+		  console.log(day);
+		  res.json(day)
+		})
+	});
+
+// more routes for our API will happen here
+router.route('/week')
+
+
+	//******************************************************
+
+
+	//******************************************************
+	//GET ALL
+	//get all days (accessed at GET http://localhost:8080/api/recipes)
+	//******************************************************
+	.get(function(req, res) {
+		WeekPlan
+		.find()
+		.populate('recipe')
+		.exec(function (err, days) {
+		  if (err) return handleError(err);
+		  // console.log(days);
+		  res.json(days)
+		})
+	});
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api

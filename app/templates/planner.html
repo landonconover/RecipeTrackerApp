@@ -67,7 +67,7 @@
 		    {{recipes.Sunday || Sunday}}
 		    <span class="caret"></span>
 		  </button>
-		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		  <ul class="dropdown-menu last-dropdown" role="menu" aria-labelledby="dropdownMenu1">
 		    <li role="presentation" ng-repeat="recipe in recipes"><a role="menuitem" ng-click="selectRecipie(recipe.name, 'Sunday', recipe._id)" tabindex="-1" >{{recipe.name}}</a></li>
 		  </ul>
 		</div>

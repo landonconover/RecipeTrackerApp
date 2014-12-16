@@ -14,8 +14,8 @@
             	<h4>Amount Needed</h4>
             </div>
           </div>
-        <div ng-repeat="recipe in recipes">
-          <div class="row" ng-repeat="ingredient in recipe.ingredients">
+        <div ng-repeat="selected in weekRecipies">
+          <div class="row" ng-repeat="ingredient in selected.recipe.ingredients">
           	<div class="col-xs-1">
             	<input type="checkbox" />
             </div>

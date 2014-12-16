@@ -103,8 +103,10 @@ recipeApp.controller('PlannerController', function($scope, Recipe, Week){
 
 });
 
-recipeApp.controller('ListController', function($scope, Recipe){
-	$scope.recipes = Recipe.query();
+recipeApp.controller('ListController', function($scope, Recipe, Week){
+	//get ALL the recipies for the week
+  $scope.weekRecipies = Week.query();
+  
 });
 
 recipeApp.controller('AddRecipeController', function($scope, Recipe, $http){
